@@ -1,11 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Console_RPG
 {
     class BattleSystem : LocationFeature
     {
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         public List<Enemy> enemies;
         
 
@@ -34,6 +47,7 @@ namespace Console_RPG
                 //If the player wins
                 if (enemies.TrueForAll(enemies => enemies.currentHP <= 0))
                 {
+                    Player.coinCount += enemies.Sum(enemy => enemy.coinsDroppedOnDefeated);
                     Program.print("You have won, you live to see another day!");
                     break;
                 }
@@ -44,6 +58,7 @@ namespace Console_RPG
                     {
                     Program.print ("It is " + enemy.name + "'s turn.");
                     enemy.Doturn(Players, enemies);
+                        this.isResloved = true;
                     }
                     
                 }

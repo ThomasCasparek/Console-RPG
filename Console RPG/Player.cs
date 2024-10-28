@@ -9,7 +9,9 @@ namespace Console_RPG
     {
         //Inventory
 
+        
         public static List<Item> Inventory = new List<Item>() { Item.PotionI };
+
 
 
         //Players
@@ -91,6 +93,7 @@ namespace Console_RPG
             Program.print("Do you choose to attack or use an item?");
             Program.print("|ATTACK| |ITEM|");
             string choice = Console.ReadLine().ToLower();
+            Program.Inventory(choice);
 
             if (choice == "attack")
             {
@@ -109,6 +112,7 @@ namespace Console_RPG
             {
                 Doturn(Players, enemies);
             }
+
 
 
 

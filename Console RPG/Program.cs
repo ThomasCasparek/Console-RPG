@@ -135,8 +135,31 @@ namespace Console_RPG
 
 
 
-
         }
+        public static bool Inventory(string input) 
+        {
+        
+            if (input== "inventory")
+            {
+                for (int i = 0; i < Player.Inventory.Count; i++)
+                {
+                    if(i == Player.Inventory.Count - 1)
+                    {
+                        Console.WriteLine($"{Player.Inventory[i].name}");
+                        Console.WriteLine($"You have {Player.coinCount} coins.");
+                    }
+                    else
+                    {
+                    Console.Write($"{Player.Inventory[i]}, ");
+                    }
+                }
+
+                return true;
+            }
+            else {  return false; }
+        
+        }
+
         //Code for wrong answers
         public static string Answers (List<string> COREECT, string input)
             

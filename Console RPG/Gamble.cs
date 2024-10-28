@@ -10,7 +10,7 @@ namespace Console_RPG
         public static void Resolve()
         {
             Random random = new Random();
-            string[] symbols = { "Cherry", "Lemon", "Orange", "Bell", "Bar", "Seven" };
+            string[] symbols = { "!", "@", "#", "$", "%", "&" };
 
             while (true)
             {
@@ -21,6 +21,9 @@ namespace Console_RPG
                 {
                     break;
                 }
+
+
+               
 
                 string[] result = new string[3];
                 for (int i = 0; i < 3; i++)

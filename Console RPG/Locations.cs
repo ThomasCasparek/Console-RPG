@@ -6,6 +6,7 @@ using System.Threading;
 
 namespace Console_RPG
 {
+
     class Locations
     {
         //Locations
@@ -20,6 +21,7 @@ namespace Console_RPG
 
         public string name;
         public string description;
+        public bool isdescriptionresolved;
         public LocationFeature feature;
 
         public Locations north, east, south, west;
@@ -35,32 +37,32 @@ namespace Console_RPG
         {
             if (!(north is null))
             {
-             north.south = this;
-             this.north = north;
+                north.south = this;
+                this.north = north;
 
             }
-                
+
 
             if (!(east is null))
             {
-             east.west = this;
-             this.east = east;
+                east.west = this;
+                this.east = east;
             }
-                
+
 
             if (!(south is null))
             {
-             south.north = this;
-             this.south = south;
+                south.north = this;
+                this.south = south;
             }
-                
+
 
             if (!(west is null))
             {
-             west.east = this;    
-             this.west = west;
+                west.east = this;
+                this.west = west;
             }
-                
+
 
 
 
@@ -69,11 +71,19 @@ namespace Console_RPG
         public void resolve(List<Player> Players)
         {
             List<string>options = new List<string>();
+
+            if (!isdescriptionresolved)
+            {
             Program.print(" You find yourself in the " + name);
-            Program.print(description);
+                Program.print(description);
+                isdescriptionresolved = true;
+            }
+            
+
 
             //NullChecking
-            feature?.Resolve(Players);
+            if (feature != null && !feature.isResloved)
+                feature?.Resolve(Players);
 
             if (!(this.north is null))
             {
@@ -96,9 +106,14 @@ namespace Console_RPG
                 Program.print("WEST: " + this.west.name);
                 options.Add("west");
             }
-            string direction = Program.Answers(options, Console.ReadLine());
+            string input = Console.ReadLine();
+            string direction="";
+            if (!Program.Inventory(input))
+            {
+             direction = Program.Answers(options, input);
+            }
 
-            Locations nextLocations = null;
+            Locations nextLocations = this;
 
             //What do I
 
@@ -110,7 +125,7 @@ namespace Console_RPG
                 nextLocations = this.east;
             else if (direction == "west")
                 nextLocations = this.west;
-
+            
             nextLocations.resolve(Players);
         }
         
