@@ -20,7 +20,7 @@ namespace Console_RPG
             Program.print($"Welcome to {shopkeeperName} 's shop! Buy my stuff!");
             while (true)
             {
-                Program.print("|BUY|   |LEAVE|   |SELL|");
+                Program.print("|BUY|   |LEAVE|   |SELL|   |!GAMBLE!|");
                 string userChoice = Console.ReadLine().ToLower();
 
                 if (userChoice == "buy")
@@ -35,7 +35,7 @@ namespace Console_RPG
 
                     }
                     Item item = ChooseItem(this.items);
-                    Player.CoinCount -= item.shopPrice;
+                    Player.coinCount -= item.shopPrice;
                     Player.Inventory.Add(item);
 
                     Program.print($"You purchased {item.name}!");
@@ -43,7 +43,7 @@ namespace Console_RPG
                 else if (userChoice == "sell")
                 {
                     Item item = ChooseItem(Player.Inventory);
-                    Player.CoinCount += item.sellPrice;
+                    Player.coinCount += item.sellPrice;
                     Player.Inventory.Remove(item);
 
                     Program.print($"You sold {item.name}!");
@@ -53,13 +53,17 @@ namespace Console_RPG
                 {
                     break;
                 }
+                else if(userChoice == "gamble")
+                {
+                    Gamble.Resolve();
+                }
             }
            
         }
 
         public Item ChooseItem(List<Item> choices)
             {
-                Console.WriteLine("Type in the number of the titem you want to use");
+                Console.WriteLine("Type in the number corresponding to the item you'd like to buy!");
 
                 for (int i = 0; i < choices.Count; i++)
                 {

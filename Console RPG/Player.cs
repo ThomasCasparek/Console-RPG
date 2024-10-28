@@ -22,7 +22,7 @@ namespace Console_RPG
         public Weapon mainWeapon;
 
         //Choosing Target
-        public static int CoinCount = 0;
+        public static int coinCount = 0;
         public override Entity ChooseTarget(List<Entity> choices)
         {
              //Program.print("Who do you choose to attack (Hint:Input the number.)");

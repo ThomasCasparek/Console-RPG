@@ -28,7 +28,7 @@ namespace Console_RPG
 
         public override void Attack(Entity target)
         {
-            Program.print(this.name + " attacked 5" + target.name + "!");
+            Program.print(this.name + " attacked " + target.name + stats.Attack);
             target.currentHP -= this.stats.Attack;
             Program.print(this.name + " did " + this.stats.Attack + " to You!");
             Program.print("You now have " + target.currentHP + " Left.");
