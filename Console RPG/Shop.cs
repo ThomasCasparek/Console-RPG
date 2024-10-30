@@ -25,21 +25,50 @@ namespace Console_RPG
 
                 if (userChoice == "buy")
                 {
-                    Program.print("What would you like to buy traveler???");
-                    Program.print("I have got ");
-                    foreach (Item I in items)
-                    {
 
-                        Program.print($"{I.name} ({I.shopPrice})");
+
+                    
+                    {
+                        Program.print("What would you like to buy traveler???");
+                        Program.print("I have got ");
+                        foreach (Item I in items)
+                        {
+
+                            Program.print($"{I.name} ({I.shopPrice})");
+
+                        }
+                        Item item = ChooseItem(this.items);
+                            if (Player.coinCount < item.shopPrice)
+                            {
+                                Program.print("You can't buy this broke boy.");
+                            }
+                        else
+                        {
+                        Player.coinCount -= item.shopPrice;
+                        Player.Inventory.Add(item);
+                        Program.print($"You purchased {item.name}!");
+
+                        }
+
+
 
 
                     }
-                    Item item = ChooseItem(this.items);
-                    Player.coinCount -= item.shopPrice;
-                    Player.Inventory.Add(item);
 
-                    Program.print($"You purchased {item.name}!");
+
+                   
+               
+                   
+
+
+
                 }
+                
+
+                
+                
+                
+                
                 else if (userChoice == "sell")
                 {
                     Item item = ChooseItem(Player.Inventory);

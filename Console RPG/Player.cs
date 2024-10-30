@@ -9,8 +9,10 @@ namespace Console_RPG
     {
         //Inventory
 
-        
+
         public static List<Item> Inventory = new List<Item>() { Item.PotionI };
+        
+        
 
 
 
