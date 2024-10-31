@@ -37,6 +37,7 @@ namespace Console_RPG
             Locations.ForestOpening.SetNearbyLocations(north: Locations.TrainingYard);
             Locations.ForestOpening.SetNearbyLocations(west: Locations.Graveyard);
             Locations.ForestOpening.SetNearbyLocations(east: Locations.Shop);
+           // Locations.TrainingYard.SetNearbyLocations(north: Locations.Castle);
 
             Locations.Cave.resolve(new List<Player>() { Player.Player1 });
 

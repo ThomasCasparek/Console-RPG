@@ -14,7 +14,7 @@ namespace Console_RPG
 
             while (true)
             {
-                Console.WriteLine("Press Enter to spin the slot machine.");
+                Console.WriteLine("George: ''Pull the lever to spin the slot machine.''\r\n Press ENTER");
                 string input = Console.ReadLine();
 
                 if (input.ToLower() == "exit")

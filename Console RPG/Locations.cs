@@ -11,11 +11,11 @@ namespace Console_RPG
     {
         //Locations
        public static Locations Cave = new Locations("Cave", "You are fallen over with only a ShortSword and a sack with very little supplies.\r\nA enemy goblin charges you with it's rusty knife.", new BattleSystem(new List<Enemy>() {Enemy. Goblin }));
-       public static Locations Graveyard = new Locations("The graveyard.", "Dark and cold.", new BattleSystem(new List<Enemy>() { Enemy.SkeletonKing }));
+       public static Locations Graveyard = new Locations("The graveyard.", "Dark and cold \r\nThe SkeletonKing blocks your path!", new BattleSystem(new List<Enemy>() { Enemy.SkeletonKing }));
        public static Locations TrainingYard = new Locations("TrainingYard", "The smell of preperation fills the air.", new BattleSystem(new List<Enemy>() { Enemy.LivingArmor }));
         public static Locations ForestOpening = new Locations("Forest Opening", "Looks peaceful, and there is a quaint little shop to your right");
         public static Locations Shop = new Locations("George's Shop!", "Smells of cheap mead", new Shop("George", new List<Item>() { Item.PotionI }));
-        //random ass locations stuff
+        //random locations stuff
 
 
 

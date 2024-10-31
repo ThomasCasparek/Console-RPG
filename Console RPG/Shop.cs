@@ -17,7 +17,7 @@ namespace Console_RPG
 
         public override void Resolve(List<Player> players)
         {
-            Program.print($"Welcome to {shopkeeperName} 's shop! Buy my stuff!");
+            Program.print($"Geroge: ''Welcome to {shopkeeperName} 's shop! Buy my stuff!''");
             while (true)
             {
                 Program.print("|BUY|   |LEAVE|   |SELL|   |!GAMBLE!|");
@@ -29,8 +29,8 @@ namespace Console_RPG
 
                     
                     {
-                        Program.print("What would you like to buy traveler???");
-                        Program.print("I have got ");
+                        Program.print("Geroge: ''What would you like to buy traveler?''");
+                        Program.print("''I've go''t ");
                         foreach (Item I in items)
                         {
 
@@ -40,7 +40,7 @@ namespace Console_RPG
                         Item item = ChooseItem(this.items);
                             if (Player.coinCount < item.shopPrice)
                             {
-                                Program.print("You can't buy this broke boy.");
+                                Program.print("George: ''You can't buy this broke boy.''");
                             }
                         else
                         {
