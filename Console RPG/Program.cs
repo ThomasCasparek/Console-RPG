@@ -142,17 +142,13 @@ namespace Console_RPG
         
             if (input== "inventory")
             {
+                    Console.WriteLine($"You have {Player.coinCount} coins.");
+
                 for (int i = 0; i < Player.Inventory.Count; i++)
                 {
-                    if(i == Player.Inventory.Count - 1)
-                    {
-                        Console.WriteLine($"{Player.Inventory[i].name}");
-                        Console.WriteLine($"You have {Player.coinCount} coins.");
-                    }
-                    else
-                    {
-                    Console.Write($"{Player.Inventory[i]}, ");
-                    }
+
+                    Console.WriteLine($"{Player.Inventory[i].name}");
+
                 }
 
                 return true;

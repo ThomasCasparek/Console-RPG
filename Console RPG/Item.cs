@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Console_RPG
@@ -6,12 +7,13 @@ namespace Console_RPG
     abstract class Item
     {
         
-        public static PotionI PotionI = new PotionI("Potion I", "Regain health.", 20, 20, 50);
+        public static PotionI PotionI = new PotionI("Potion I", "Regain health.", 20, 20, 50 );
         public static ShortSword ShortSword1 = new ShortSword("ShortSword", "A moderatly decent sword.", 30, 20, 40);
         public string name;
         public string description;
         public int shopPrice;
         public int sellPrice;
+      
 
         public Item(string name, string description, int shopPrice, int sellPrice)
         {
@@ -19,7 +21,7 @@ namespace Console_RPG
             this.description = description;
             this.shopPrice = shopPrice;
             this.sellPrice = sellPrice;
-
+           
         }
 
         public abstract void Use(Entity user, Entity target);

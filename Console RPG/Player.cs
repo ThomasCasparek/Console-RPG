@@ -126,17 +126,17 @@ namespace Console_RPG
         {
             item.Use(this, target);
         }
-       // public Item ChooseItem(List<Item> choices)
-       // {
-       //     Console.WriteLine("Type in the number of the item you want to use");
-       //
-       //     for (int i = 0; i < choices.Count; i++)
-       //     {
-       //         Program.print($"{i + 1}: {choices[i].name}");
-       //     }
-       //
-       //     int index = Convert.ToInt32(Console.ReadLine());
-       //     return choices[index - 1];
-       // }
+       public Item ChooseInventoryItem(List<Item> choices)
+        {
+           Console.WriteLine("Type in the number of the item you want to use");
+      
+           for (int i = 0; i < choices.Count; i++)
+            {
+                Program.print($"{i + 1}: {choices[i].name}");
+            }
+       
+            int index = Convert.ToInt32(Console.ReadLine());
+            return choices[index - 1];
+       }
     }
 }

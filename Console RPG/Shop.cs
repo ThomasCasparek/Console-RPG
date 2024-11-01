@@ -30,7 +30,7 @@ namespace Console_RPG
                     
                     {
                         Program.print("Geroge: ''What would you like to buy traveler?''");
-                        Program.print("''I've go''t ");
+                        
                         foreach (Item I in items)
                         {
 
